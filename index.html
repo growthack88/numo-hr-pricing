@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استراتيجية تسعير نظام الموارد البشرية</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background: #f5f7fa;
+            color: #1a1a2e;
+            line-height: 1.8;
+            padding: 40px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 48px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            color: #667eea;
+            margin-bottom: 16px;
+        }
+        
+        .header .meta {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            font-size: 1.5em;
+            color: #16213e;
+            margin-bottom: 20px;
+            padding-right: 16px;
+            border-right: 4px solid #667eea;
+        }
+        
+        .section h3 {
+            font-size: 1.2em;
+            color: #444;
+            margin: 24px 0 16px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fafbfc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 14px 16px;
+            text-align: right;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f0f4ff;
+        }
+        
+        .price-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin: 24px 0;
+        }
+        
+        .price-card.starter {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .price-card.business {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .price-card.enterprise {
+            background: linear-gradient(135deg, #834d9b 0%, #d04ed6 100%);
+        }
+        
+        .price-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 16px;
+            color: white;
+        }
+        
+        .price-card .price {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .price-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .price-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .comparison-box {
+            background: #e8f5e9;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        
+        .comparison-box.highlight {
+            background: #fff3e0;
+        }
+        
+        .recommendation {
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+            border-right: 4px solid #2196f3;
+        }
+        
+        .action-item {
+            background: #fce4ec;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+        
+        .badge.green { background: #c8e6c9; color: #2e7d32; }
+        .badge.blue { background: #bbdefb; color: #1565c0; }
+        .badge.purple { background: #e1bee7; color: #7b1fa2; }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .summary-box h3 {
+            color: #ffd700;
+            margin-bottom: 16px;
+        }
+        
+        blockquote {
+            background: #f5f5f5;
+            border-right: 4px solid #667eea;
+            padding: 20px;
+            margin: 24px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 24px;
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 32px;
+            margin-top: 40px;
+            border-top: 2px solid #e8e8e8;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 استراتيجية تسعير نظام الموارد البشرية</h1>
+            <div class="meta">
+                <strong>التاريخ:</strong> ٣ ديسمبر ٢٠٢٥ | 
+                <strong>المشاركون:</strong> محمود عمر، أحمد إبراهيم، مصطفى محارب، معاذ
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📋 ملخص الاجتماع</h2>
+            
+            <div class="grid-2">
+                <div class="recommendation">
+                    <h4>💡 رأي مصطفى</h4>
+                    <ul>
+                        <li>بيع النظام ككل وليس مجزأ</li>
+                        <li>تسعير أقل من المنافسين للدخول للسوق</li>
+                        <li>التركيز على أول ١٠ عملاء حتى لو بسعر التكلفة</li>
+                    </ul>
+                </div>
+                
+                <div class="recommendation" style="border-right-color: #4caf50;">
+                    <h4>🚀 استراتيجية محمود (المعتمدة)</h4>
+                    <ul>
+                        <li>استراتيجية Foodics: ٣ شهور مجانية</li>
+                        <li>بعد إدخال البيانات، العميل لن يغادر</li>
+                        <li>استهداف ٣٩٧ شركة تستخدم Odoo في السعودية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 تحليل المنافسين في السوق السعودي</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>المنافس</th>
+                        <th>السعر</th>
+                        <th>عدد العملاء</th>
+                        <th>الميزة التنافسية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Jisr</strong></td>
+                        <td>١٥ ريال/موظف/شهر</td>
+                        <td>+٤,٥٠٠ شركة</td>
+                        <td>الأكثر انتشاراً</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bayzat</strong></td>
+                        <td>١١ ريال/موظف/شهر</td>
+                        <td>+٢,٠٠٠ شركة</td>
+                        <td>متكامل مع التأمين</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ZenHR</strong></td>
+                        <td>١٩ ريال/موظف/شهر</td>
+                        <td>+١,٥٠٠ شركة</td>
+                        <td>واجهة عربية متميزة</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Odoo HR</strong></td>
+                        <td>٥,٠٠٠-٢٠,٠٠٠/سنة</td>
+                        <td>٣٩٧ شركة</td>
+                        <td>نظام متكامل ERP</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>💰 الخطط التسعيرية المقترحة</h2>
+            
+            <div class="price-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 100%);">
+                <h3>🎁 خطة الإطلاق (Launch Offer)</h3>
+                <div class="price">مجاناً لمدة ٣ شهور</div>
+                <p>ثم ٦,٠٠٠ ريال/سنة - لأول ٢٠ عميل فقط</p>
+                <ul>
+                    <li>✅ جميع الميزات الأساسية</li>
+                    <li>✅ حتى ٥٠ موظف</li>
+                    <li>✅ دعم فني كامل</li>
+                </ul>
+            </div>
+            
+            <div class="grid-2">
+                <div class="price-card starter">
+                    <h3>🔵 خطة المبتدئين</h3>
+                    <div class="price">٥,٠٠٠ ريال/سنة</div>
+                    <p>١-٣٠ موظف</p>
+                    <ul>
+                        <li>✅ إدارة بيانات الموظفين</li>
+                        <li>✅ الحضور والانصراف</li>
+                        <li>✅ طلبات الإجازات</li>
+                        <li>✅ كشوف الرواتب</li>
+                        <li>✅ تطبيق الجوال</li>
+                    </ul>
+                </div>
+                
+                <div class="price-card business">
+                    <h3>🟢 خطة الأعمال</h3>
+                    <div class="price">١٢,٠٠٠ ريال/سنة</div>
+                    <p>٣١-١٠٠ موظف</p>
+                    <ul>
+                        <li>✅ جميع ميزات المبتدئين</li>
+                        <li>✅ ربط WPS و GOSI</li>
+                        <li>✅ إدارة الأداء</li>
+                        <li>✅ التقارير المتقدمة</li>
+                        <li>✅ دعم أولوية</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="price-card enterprise">
+                <h3>🟣 خطة المؤسسات</h3>
+                <div class="price">حسب الطلب</div>
+                <p>+١٠٠ موظف | ٢٠,٠٠٠ - ٥٠,٠٠٠ ريال/سنة</p>
+                <ul>
+                    <li>✅ جميع الميزات + تخصيص كامل + API + مدير حساب مخصص + تدريب</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📈 مقارنة الأسعار (٥٠ موظف)</h2>
+            
+            <div class="comparison-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>النظام</th>
+                            <th>التكلفة السنوية</th>
+                            <th>الفرق</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #c8e6c9;">
+                            <td><strong>🎯 نظامنا</strong></td>
+                            <td><strong>٥,٠٠٠ ريال</strong></td>
+                            <td><span class="badge green">الأفضل سعراً</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bayzat</td>
+                            <td>٦,٦٠٠ ريال</td>
+                            <td>أرخص بـ ٢٤%</td>
+                        </tr>
+                        <tr>
+                            <td>Jisr</td>
+                            <td>٩,٠٠٠ ريال</td>
+                            <td>أرخص بـ ٤٤%</td>
+                        </tr>
+                        <tr>
+                            <td>ZenHR</td>
+                            <td>١١,٤٠٠ ريال</td>
+                            <td>أرخص بـ ٥٦%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 استراتيجية الإطلاق</h2>
+            
+            <div class="grid-2">
+                <div class="action-item" style="background: #e3f2fd;">
+                    <span class="badge blue">المرحلة ١</span>
+                    <div>
+                        <strong>الاستحواذ (٣-٦ أشهر)</strong><br>
+                        استهداف ٣٩٧ شركة Odoo<br>
+                        الهدف: ١٠ عملاء
+                    </div>
+                </div>
+                
+                <div class="action-item" style="background: #e8f5e9;">
+                    <span class="badge green">المرحلة ٢</span>
+                    <div>
+                        <strong>التثبيت (٦-١٢ شهر)</strong><br>
+                        تحويل المجانيين للمدفوعين<br>
+                        الهدف: ٣٠ عميل
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📝 خطوات العمل القادمة</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>المهمة</th>
+                        <th>المسؤول</th>
+                        <th>الموعد</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>إعداد قائمة شركات Odoo</td>
+                        <td>محمود</td>
+                        <td>أسبوع</td>
+                    </tr>
+                    <tr>
+                        <td>حساب تكلفة السيرفرات</td>
+                        <td>مصطفى</td>
+                        <td>أسبوع</td>
+                    </tr>
+                    <tr>
+                        <td>إعداد عرض البيع</td>
+                        <td>أحمد</td>
+                        <td>أسبوع</td>
+                    </tr>
+                    <tr>
+                        <td>تصميم Landing Page</td>
+                        <td>فريق التسويق</td>
+                        <td>أسبوعين</td>
+                    </tr>
+                    <tr>
+                        <td>إطلاق الحملة</td>
+                        <td>الفريق</td>
+                        <td>٣ أسابيع</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="summary-box">
+            <h3>💎 الخلاصة</h3>
+            <p style="font-size: 1.2em; margin-top: 16px;">
+                "الهدف ليس الربح السريع، بل بناء قاعدة عملاء تنمو معنا"
+            </p>
+            <div style="margin-top: 24px; display: flex; justify-content: center; gap: 40px;">
+                <div>
+                    <div style="font-size: 2em; color: #ffd700;">٣٠-٥٠%</div>
+                    <div>أرخص من المنافسين</div>
+                </div>
+                <div>
+                    <div style="font-size: 2em; color: #ffd700;">٣ شهور</div>
+                    <div>فترة تجربة مجانية</div>
+                </div>
+                <div>
+                    <div style="font-size: 2em; color: #ffd700;">١٠</div>
+                    <div>عملاء للتعادل</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>تم إعداد هذا التقرير بناءً على اجتماع ٣ ديسمبر ٢٠٢٥ وتحليل السوق السعودي</p>
+            <p>نمو للتدريب والتعليم | Numo Training & Education</p>
+        </div>
+    </div>
+</body>
+</html>
