@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استراتيجية تسعير نظام الموارد البشرية</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -12,106 +12,149 @@
             box-sizing: border-box;
         }
         
+        html {
+            font-size: 16px;
+        }
+        
         body {
             font-family: 'Cairo', Arial, sans-serif;
             background: #f5f7fa;
             color: #1a1a2e;
-            line-height: 1.8;
-            padding: 16px;
-            font-size: 16px;
+            line-height: 1.7;
+            padding: 12px;
+            min-height: 100vh;
         }
         
         .container {
+            width: 100%;
             max-width: 900px;
             margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            padding: 24px;
-            overflow-x: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 20px;
         }
         
+        /* Header */
         .header {
             text-align: center;
-            margin-bottom: 32px;
-            padding-bottom: 24px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
             border-bottom: 3px solid #667eea;
         }
         
         .header h1 {
-            font-size: 1.5em;
+            font-size: 1.4rem;
             color: #667eea;
-            margin-bottom: 12px;
-            line-height: 1.4;
+            margin-bottom: 10px;
+            line-height: 1.5;
         }
         
         .header .meta {
             color: #666;
-            font-size: 0.85em;
-            line-height: 1.6;
+            font-size: 0.85rem;
+            line-height: 1.8;
         }
         
+        /* Sections */
         .section {
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
         
         .section h2 {
-            font-size: 1.2em;
+            font-size: 1.1rem;
             color: #16213e;
             margin-bottom: 16px;
             padding-right: 12px;
             border-right: 4px solid #667eea;
-            line-height: 1.4;
+            line-height: 1.5;
         }
         
-        .section h3 {
-            font-size: 1.1em;
-            color: #444;
-            margin: 20px 0 12px;
+        /* Cards Grid - Mobile First */
+        .cards-grid {
+            display: block;
         }
         
-        /* Table Responsive */
-        .table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 16px 0;
+        .card {
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-right: 4px solid #2196f3;
         }
         
-        table {
-            width: 100%;
-            min-width: 500px;
-            border-collapse: collapse;
+        .card.green-border {
+            border-right-color: #4caf50;
+        }
+        
+        .card h4 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .card ul {
+            padding-right: 18px;
+            margin: 0;
+        }
+        
+        .card li {
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* Mobile Tables as Cards */
+        .competitor-cards {
+            display: block;
+        }
+        
+        .competitor-card {
             background: #fafbfc;
-            border-radius: 8px;
-            overflow: hidden;
-            font-size: 0.9em;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #e0e0e0;
         }
         
-        th, td {
-            padding: 12px 10px;
-            text-align: right;
-            border-bottom: 1px solid #e8e8e8;
+        .competitor-card .name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 8px;
         }
         
-        th {
-            background: #667eea;
-            color: white;
+        .competitor-card .detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+        
+        .competitor-card .detail:last-child {
+            border-bottom: none;
+        }
+        
+        .competitor-card .label {
+            color: #666;
+        }
+        
+        .competitor-card .value {
             font-weight: 600;
-            white-space: nowrap;
-        }
-        
-        tr:hover {
-            background: #f0f4ff;
+            color: #1a1a2e;
         }
         
         /* Price Cards */
         .price-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 16px;
             color: white;
-            border-radius: 16px;
-            padding: 24px;
-            margin: 20px 0;
+        }
+        
+        .price-card.launch {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 100%);
         }
         
         .price-card.starter {
@@ -127,14 +170,19 @@
         }
         
         .price-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 12px;
-            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
         }
         
         .price-card .price {
-            font-size: 1.8em;
+            font-size: 1.6rem;
             font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .price-card .subtitle {
+            font-size: 0.85rem;
+            opacity: 0.95;
             margin-bottom: 12px;
         }
         
@@ -144,223 +192,235 @@
         }
         
         .price-card li {
-            padding: 6px 0;
+            padding: 5px 0;
+            font-size: 0.9rem;
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.95em;
         }
         
         .price-card li:last-child {
             border-bottom: none;
         }
         
-        /* Grid System */
-        .grid-2 {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        
-        /* Recommendation Boxes */
-        .recommendation {
-            background: #e3f2fd;
-            border-radius: 12px;
-            padding: 20px;
-            border-right: 4px solid #2196f3;
-        }
-        
-        .recommendation h4 {
-            margin-bottom: 12px;
-            font-size: 1.1em;
-        }
-        
-        .recommendation ul {
-            padding-right: 20px;
-            margin: 0;
-        }
-        
-        .recommendation li {
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-        
-        /* Comparison Box */
-        .comparison-box {
+        /* Comparison Cards */
+        .comparison-section {
             background: #e8f5e9;
             border-radius: 12px;
             padding: 16px;
-            margin: 16px 0;
         }
         
-        /* Action Items */
-        .action-item {
-            background: #e3f2fd;
+        .comparison-card {
+            background: white;
             border-radius: 8px;
-            padding: 16px;
-            margin: 12px 0;
+            padding: 12px 16px;
+            margin-bottom: 10px;
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .action-item .badge {
-            flex-shrink: 0;
+        .comparison-card.highlight {
+            background: #c8e6c9;
+            border: 2px solid #4caf50;
         }
         
-        /* Badges */
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
+        .comparison-card .system {
             font-weight: 600;
+            font-size: 0.95rem;
         }
         
-        .badge.green { background: #c8e6c9; color: #2e7d32; }
-        .badge.blue { background: #bbdefb; color: #1565c0; }
-        .badge.purple { background: #e1bee7; color: #7b1fa2; }
+        .comparison-card .cost {
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-card .cost .amount {
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        
+        .comparison-card .cost .diff {
+            font-size: 0.8rem;
+            color: #2e7d32;
+        }
+        
+        /* Strategy Cards */
+        .strategy-card {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .strategy-card.phase2 {
+            background: #e8f5e9;
+        }
+        
+        .strategy-card .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .strategy-card .badge.blue {
+            background: #bbdefb;
+            color: #1565c0;
+        }
+        
+        .strategy-card .badge.green {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        
+        .strategy-card .title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        
+        .strategy-card .desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.6;
+        }
         
         /* Summary Box */
         .summary-box {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
-            border-radius: 16px;
-            padding: 24px;
-            margin: 32px 0;
+            border-radius: 14px;
+            padding: 24px 20px;
             text-align: center;
+            margin-top: 24px;
         }
         
         .summary-box h3 {
             color: #ffd700;
+            font-size: 1.2rem;
             margin-bottom: 12px;
-            font-size: 1.2em;
         }
         
-        .summary-box p {
-            font-size: 1em;
+        .summary-box .quote {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
         
-        .stats-grid {
-            margin-top: 20px;
+        .stats-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 16px;
         }
         
-        .stat-item {
+        .stat {
             text-align: center;
-            min-width: 80px;
+            flex: 1;
+            min-width: 90px;
         }
         
-        .stat-item .number {
-            font-size: 1.5em;
-            color: #ffd700;
+        .stat .num {
+            font-size: 1.3rem;
             font-weight: 700;
+            color: #ffd700;
+            display: block;
         }
         
-        .stat-item .label {
-            font-size: 0.85em;
+        .stat .lbl {
+            font-size: 0.75rem;
             opacity: 0.9;
         }
         
         /* Footer */
         .footer {
             text-align: center;
-            padding-top: 24px;
-            margin-top: 32px;
+            padding-top: 20px;
+            margin-top: 24px;
             border-top: 2px solid #e8e8e8;
             color: #666;
-            font-size: 0.85em;
+            font-size: 0.8rem;
         }
         
         .footer p {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         
-        /* Desktop Styles */
-        @media (min-width: 768px) {
+        /* Tablet and Desktop */
+        @media screen and (min-width: 600px) {
             body {
-                padding: 40px;
+                padding: 24px;
             }
             
+            .container {
+                padding: 32px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .cards-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            
+            .cards-grid .card {
+                margin-bottom: 0;
+            }
+            
+            .price-cards-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            
+            .price-cards-grid .price-card {
+                margin-bottom: 0;
+            }
+            
+            .price-card .price {
+                font-size: 2rem;
+            }
+            
+            .strategies-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            
+            .strategies-grid .strategy-card {
+                margin-bottom: 0;
+            }
+            
+            .stat .num {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media screen and (min-width: 800px) {
             .container {
                 padding: 48px;
             }
             
             .header h1 {
-                font-size: 2.2em;
+                font-size: 2.2rem;
             }
             
-            .header .meta {
-                font-size: 0.95em;
+            .competitor-cards {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
             }
             
-            .section h2 {
-                font-size: 1.5em;
-            }
-            
-            .grid-2 {
-                flex-direction: row;
-            }
-            
-            .grid-2 > * {
-                flex: 1;
-            }
-            
-            .price-card {
-                padding: 32px;
-            }
-            
-            .price-card .price {
-                font-size: 2.5em;
-            }
-            
-            .stat-item .number {
-                font-size: 2em;
-            }
-            
-            table {
-                font-size: 1em;
-            }
-            
-            th, td {
-                padding: 14px 16px;
-            }
-        }
-        
-        /* Small phones */
-        @media (max-width: 380px) {
-            body {
-                padding: 8px;
-            }
-            
-            .container {
-                padding: 16px;
-                border-radius: 12px;
-            }
-            
-            .header h1 {
-                font-size: 1.3em;
-            }
-            
-            .price-card {
-                padding: 16px;
-            }
-            
-            .price-card .price {
-                font-size: 1.5em;
-            }
-            
-            .recommendation {
-                padding: 16px;
-            }
-            
-            .stats-grid {
-                gap: 12px;
-            }
-            
-            .stat-item .number {
-                font-size: 1.3em;
+            .competitor-card {
+                margin-bottom: 0;
             }
         }
     </style>
@@ -377,9 +437,8 @@
         
         <div class="section">
             <h2>📋 ملخص الاجتماع</h2>
-            
-            <div class="grid-2">
-                <div class="recommendation">
+            <div class="cards-grid">
+                <div class="card">
                     <h4>💡 رأي مصطفى</h4>
                     <ul>
                         <li>بيع النظام ككل وليس مجزأ</li>
@@ -387,8 +446,7 @@
                         <li>التركيز على أول ١٠ عملاء حتى لو بسعر التكلفة</li>
                     </ul>
                 </div>
-                
-                <div class="recommendation" style="border-right-color: #4caf50;">
+                <div class="card green-border">
                     <h4>🚀 استراتيجية محمود</h4>
                     <ul>
                         <li>استراتيجية Foodics: ٣ شهور مجانية</li>
@@ -400,55 +458,78 @@
         </div>
         
         <div class="section">
-            <h2>📊 تحليل المنافسين في السوق السعودي</h2>
-            
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>المنافس</th>
-                            <th>السعر</th>
-                            <th>عدد العملاء</th>
-                            <th>الميزة التنافسية</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Jisr</strong></td>
-                            <td>١٥ ر.س/موظف/شهر</td>
-                            <td>+٤,٥٠٠ شركة</td>
-                            <td>الأكثر انتشاراً</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Bayzat</strong></td>
-                            <td>١١ ر.س/موظف/شهر</td>
-                            <td>+٢,٠٠٠ شركة</td>
-                            <td>متكامل مع التأمين</td>
-                        </tr>
-                        <tr>
-                            <td><strong>ZenHR</strong></td>
-                            <td>١٩ ر.س/موظف/شهر</td>
-                            <td>+١,٥٠٠ شركة</td>
-                            <td>واجهة عربية متميزة</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Odoo HR</strong></td>
-                            <td>٥-٢٠ ألف/سنة</td>
-                            <td>٣٩٧ شركة</td>
-                            <td>نظام متكامل ERP</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2>📊 تحليل المنافسين</h2>
+            <div class="competitor-cards">
+                <div class="competitor-card">
+                    <div class="name">Jisr</div>
+                    <div class="detail">
+                        <span class="label">السعر</span>
+                        <span class="value">١٥ ر.س/موظف/شهر</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">العملاء</span>
+                        <span class="value">+٤,٥٠٠ شركة</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">الميزة</span>
+                        <span class="value">الأكثر انتشاراً</span>
+                    </div>
+                </div>
+                <div class="competitor-card">
+                    <div class="name">Bayzat</div>
+                    <div class="detail">
+                        <span class="label">السعر</span>
+                        <span class="value">١١ ر.س/موظف/شهر</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">العملاء</span>
+                        <span class="value">+٢,٠٠٠ شركة</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">الميزة</span>
+                        <span class="value">متكامل مع التأمين</span>
+                    </div>
+                </div>
+                <div class="competitor-card">
+                    <div class="name">ZenHR</div>
+                    <div class="detail">
+                        <span class="label">السعر</span>
+                        <span class="value">١٩ ر.س/موظف/شهر</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">العملاء</span>
+                        <span class="value">+١,٥٠٠ شركة</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">الميزة</span>
+                        <span class="value">واجهة عربية متميزة</span>
+                    </div>
+                </div>
+                <div class="competitor-card">
+                    <div class="name">Odoo HR</div>
+                    <div class="detail">
+                        <span class="label">السعر</span>
+                        <span class="value">٥-٢٠ ألف/سنة</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">العملاء</span>
+                        <span class="value">٣٩٧ شركة</span>
+                    </div>
+                    <div class="detail">
+                        <span class="label">الميزة</span>
+                        <span class="value">نظام ERP متكامل</span>
+                    </div>
+                </div>
             </div>
         </div>
         
         <div class="section">
-            <h2>💰 الخطط التسعيرية المقترحة</h2>
+            <h2>💰 الخطط التسعيرية</h2>
             
-            <div class="price-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 100%);">
-                <h3>🎁 خطة الإطلاق (Launch Offer)</h3>
-                <div class="price">مجاناً لمدة ٣ شهور</div>
-                <p>ثم ٦,٠٠٠ ريال/سنة - لأول ٢٠ عميل فقط</p>
+            <div class="price-card launch">
+                <h3>🎁 خطة الإطلاق</h3>
+                <div class="price">مجاناً ٣ شهور</div>
+                <div class="subtitle">ثم ٦,٠٠٠ ر.س/سنة - لأول ٢٠ عميل</div>
                 <ul>
                     <li>✅ جميع الميزات الأساسية</li>
                     <li>✅ حتى ٥٠ موظف</li>
@@ -456,11 +537,11 @@
                 </ul>
             </div>
             
-            <div class="grid-2">
+            <div class="price-cards-grid">
                 <div class="price-card starter">
                     <h3>🔵 خطة المبتدئين</h3>
                     <div class="price">٥,٠٠٠ ر.س/سنة</div>
-                    <p>١-٣٠ موظف</p>
+                    <div class="subtitle">١-٣٠ موظف</div>
                     <ul>
                         <li>✅ إدارة بيانات الموظفين</li>
                         <li>✅ الحضور والانصراف</li>
@@ -473,7 +554,7 @@
                 <div class="price-card business">
                     <h3>🟢 خطة الأعمال</h3>
                     <div class="price">١٢,٠٠٠ ر.س/سنة</div>
-                    <p>٣١-١٠٠ موظف</p>
+                    <div class="subtitle">٣١-١٠٠ موظف</div>
                     <ul>
                         <li>✅ جميع ميزات المبتدئين</li>
                         <li>✅ ربط WPS و GOSI</li>
@@ -487,70 +568,62 @@
             <div class="price-card enterprise">
                 <h3>🟣 خطة المؤسسات</h3>
                 <div class="price">حسب الطلب</div>
-                <p>+١٠٠ موظف | ٢٠,٠٠٠ - ٥٠,٠٠٠ ريال/سنة</p>
+                <div class="subtitle">+١٠٠ موظف | ٢٠-٥٠ ألف ر.س/سنة</div>
                 <ul>
-                    <li>✅ جميع الميزات + تخصيص كامل + API + مدير حساب مخصص + تدريب</li>
+                    <li>✅ جميع الميزات + تخصيص + API + مدير حساب + تدريب</li>
                 </ul>
             </div>
         </div>
         
         <div class="section">
             <h2>📈 مقارنة الأسعار (٥٠ موظف)</h2>
-            
-            <div class="comparison-box">
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>النظام</th>
-                                <th>التكلفة السنوية</th>
-                                <th>الفرق</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background: #c8e6c9;">
-                                <td><strong>🎯 نظامنا</strong></td>
-                                <td><strong>٥,٠٠٠ ر.س</strong></td>
-                                <td><span class="badge green">الأفضل</span></td>
-                            </tr>
-                            <tr>
-                                <td>Bayzat</td>
-                                <td>٦,٦٠٠ ر.س</td>
-                                <td>أرخص بـ ٢٤%</td>
-                            </tr>
-                            <tr>
-                                <td>Jisr</td>
-                                <td>٩,٠٠٠ ر.س</td>
-                                <td>أرخص بـ ٤٤%</td>
-                            </tr>
-                            <tr>
-                                <td>ZenHR</td>
-                                <td>١١,٤٠٠ ر.س</td>
-                                <td>أرخص بـ ٥٦%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="comparison-section">
+                <div class="comparison-card highlight">
+                    <span class="system">🎯 نظامنا</span>
+                    <span class="cost">
+                        <span class="amount">٥,٠٠٠ ر.س</span><br>
+                        <span class="diff">✓ الأفضل سعراً</span>
+                    </span>
+                </div>
+                <div class="comparison-card">
+                    <span class="system">Bayzat</span>
+                    <span class="cost">
+                        <span class="amount">٦,٦٠٠ ر.س</span><br>
+                        <span class="diff">أرخص بـ ٢٤%</span>
+                    </span>
+                </div>
+                <div class="comparison-card">
+                    <span class="system">Jisr</span>
+                    <span class="cost">
+                        <span class="amount">٩,٠٠٠ ر.س</span><br>
+                        <span class="diff">أرخص بـ ٤٤%</span>
+                    </span>
+                </div>
+                <div class="comparison-card">
+                    <span class="system">ZenHR</span>
+                    <span class="cost">
+                        <span class="amount">١١,٤٠٠ ر.س</span><br>
+                        <span class="diff">أرخص بـ ٥٦%</span>
+                    </span>
                 </div>
             </div>
         </div>
         
         <div class="section">
             <h2>🎯 استراتيجية الإطلاق</h2>
-            
-            <div class="grid-2">
-                <div class="action-item">
+            <div class="strategies-grid">
+                <div class="strategy-card">
                     <span class="badge blue">المرحلة ١</span>
-                    <div>
-                        <strong>الاستحواذ (٣-٦ أشهر)</strong><br>
+                    <div class="title">الاستحواذ (٣-٦ أشهر)</div>
+                    <div class="desc">
                         استهداف ٣٩٧ شركة Odoo<br>
                         الهدف: ١٠ عملاء
                     </div>
                 </div>
-                
-                <div class="action-item" style="background: #e8f5e9;">
+                <div class="strategy-card phase2">
                     <span class="badge green">المرحلة ٢</span>
-                    <div>
-                        <strong>التثبيت (٦-١٢ شهر)</strong><br>
+                    <div class="title">التثبيت (٦-١٢ شهر)</div>
+                    <div class="desc">
                         تحويل المجانيين للمدفوعين<br>
                         الهدف: ٣٠ عميل
                     </div>
@@ -560,19 +633,19 @@
         
         <div class="summary-box">
             <h3>💎 الخلاصة</h3>
-            <p>"الهدف ليس الربح السريع، بل بناء قاعدة عملاء تنمو معنا"</p>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="number">٣٠-٥٠%</div>
-                    <div class="label">أرخص من المنافسين</div>
+            <p class="quote">"الهدف ليس الربح السريع، بل بناء قاعدة عملاء تنمو معنا"</p>
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="num">٣٠-٥٠%</span>
+                    <span class="lbl">أرخص من المنافسين</span>
                 </div>
-                <div class="stat-item">
-                    <div class="number">٣ شهور</div>
-                    <div class="label">فترة تجربة مجانية</div>
+                <div class="stat">
+                    <span class="num">٣ شهور</span>
+                    <span class="lbl">تجربة مجانية</span>
                 </div>
-                <div class="stat-item">
-                    <div class="number">١٠</div>
-                    <div class="label">عملاء للتعادل</div>
+                <div class="stat">
+                    <span class="num">١٠</span>
+                    <span class="lbl">عملاء للتعادل</span>
                 </div>
             </div>
         </div>
